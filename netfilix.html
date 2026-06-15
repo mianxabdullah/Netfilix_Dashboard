@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Content Analytics Portfolio</title>
+    <style>
+        /* --- CSS VARIABLES & THEME SETUP --- */
+        :root {
+            --bg-color: #000000;
+            --card-bg: #141414;
+            --card-border: #222222;
+            --netflix-red: #E50914;
+            --text-main: #FFFFFF;
+            --text-muted: #999999;
+            --glow-effect: 0 0 15px rgba(229, 9, 20, 0.35);
+        }
+
+        /* --- GLOBAL RESETS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 60px;
+        }
+
+        /* --- HEADER SECTIONS --- */
+        header {
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            padding: 0 30px;
+            text-align: left;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(229, 9, 20, 0.1);
+            color: var(--netflix-red);
+            border: 1px solid var(--netflix-red);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            box-shadow: var(--glow-effect);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+        }
+
+        /* --- DASHBOARD WRAPPER CRITICAL FOR POWER BI IFRAMES --- */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        /* Enforces a crisp container styling surrounding your canvas */
+        .iframe-frame {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), var(--glow-effect);
+            position: relative;
+            width: 100%;
+            /* Standard 16:9 aspect ratio helper targeting 1140x541.25 specs */
+            aspect-ratio: 1140 / 541.25; 
+        }
+
+        .iframe-frame iframe {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+            border: none;
+            border-radius: 6px;
+        }
+
+        /* --- DOCUMENTATION DETAILS SECTION --- */
+        .details-section {
+            max-width: 1200px;
+            margin: 50px auto 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .details-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-card, .sidebar-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--netflix-red);
+            padding-left: 12px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Custom Structured Lists styling */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--netflix-red);
+            font-weight: bold;
+        }
+
+        .feature-list strong {
+            color: var(--text-main);
+        }
+
+        /* Metadata chips */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background-color: #222222;
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid #333333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO HEADER -->
+    <header>
+        <span class="badge">Interactive Portfolio Project</span>
+        <h1>Netflix Catalog Architecture & Analytics</h1>
+        <p class="subtitle">An advanced interactive 3-page Business Intelligence ecosystem tracking over 8,800 titles to diagnose content volume patterns, macro distributions, and global talent partnerships.</p>
+    </header>
+
+    <!-- EMBED ARCHITECTURE SECTOR -->
+    <main class="dashboard-container">
+        <div class="iframe-frame">
+            <!-- Your verified live embed token configured dynamically -->
+            <iframe title="Netfilix_Dashboard" src="https://app.powerbi.com/reportEmbed?reportId=7a626786-8a0b-4390-98c4-01134929fbcb&autoAuth=true&ctid=b0eeb88f-a842-482d-a9c0-d374ec25ff27" allowFullScreen="true"></iframe>
+        </div>
+    </main>
+
+    <!-- METRICS & DOCUMENTATION PANEL -->
+    <section class="details-section">
+        <!-- Main documentation container -->
+        <div class="main-card">
+            <h2>Analytical Scope & Architecture</h2>
+            <p>This deployment translates structural catalog patterns into business insights. The reporting environment is built natively across three balanced viewpoints to allow corporate decision-makers to interact seamlessly with dynamic filters.</p>
+            
+            <ul class="feature-list">
+                <li><strong>Macro Volume Overview:</strong> Tracks global production footprints alongside historic release trajectories over cross-filtered timelines.</li>
+                <li><strong>Content Diagnostics:</strong> Segregates maturity ratings (dominated by TV-MA and TV-14 boundaries) against movie runtime classifications.</li>
+                <li><strong>Creative Talent Clusters:</strong> Isolates heavy-hitting industry actors and structural director duos using granular context filters.</li>
+            </ul>
+        </div>
+
+        <!-- Sidebar Specifications container -->
+        <div class="sidebar-card">
+            <h2>Technical Stack</h2>
+            <p>Built with enterprise structural constraints optimizing memory allocation and responsive UI refresh cycles.</p>
+            <div class="tech-tags">
+                <span class="tag">Power BI Pro</span>
+                <span class="tag">Data Modeling</span>
+                <span class="tag">DAX Measures</span>
+                <span class="tag">Power Query ETL</span>
+                <span class="tag">UI/UX Dark Mode</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
