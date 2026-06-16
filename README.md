@@ -163,20 +163,6 @@ The dataset was cleaned and transformed using Power Query:
 
 ✅ Responsive Visual Layout
 
----
-
-## 📷 Dashboard Preview
-
-### Executive Overview
-(Add Screenshot Here)
-
-### Content Analysis
-(Add Screenshot Here)
-
-### Cast & Directors Insights
-(Add Screenshot Here)
-
----
 
 ## 📁 Repository Structure
 
